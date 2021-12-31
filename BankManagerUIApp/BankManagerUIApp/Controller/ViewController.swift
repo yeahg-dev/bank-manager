@@ -5,6 +5,7 @@ class ViewController: UIViewController {
     let buttonStackView: UIStackView = UIStackView()
     let addClientButton = UIButton()
     let initializationButton = UIButton()
+    let timerLabel: TimerLabel = TimerLabel()
     
     override func loadView() {
         view = .init()
@@ -14,15 +15,28 @@ class ViewController: UIViewController {
         mainStackView.addArrangedSubview(buttonStackView)
         configureButtonStackView()
         configureButtons()
+        mainStackView.addArrangedSubview(timerLabel)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addClientButton.addTarget(self, action: #selector(addClientButtonDidTap), for: .touchUpInside)
+        initializationButton.addTarget(self, action: #selector(initializationButtonDidTap), for: .touchUpInside)
     }
+    
+    @objc func addClientButtonDidTap() {
+        timerLabel.fire()
+    }
+    
+    @objc func initializationButtonDidTap() {
+        timerLabel.stop()
+    }
+    
+    
     
     private func configureMainStackView() {
         mainStackView.axis = .vertical
-        mainStackView.distribution = .fill
+        mainStackView.distribution = .fillEqually
         mainStackView.alignment = .fill
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         let safeArea = view.safeAreaLayoutGuide
@@ -42,13 +56,14 @@ class ViewController: UIViewController {
         buttonStackView.addArrangedSubview(addClientButton)
         buttonStackView.addArrangedSubview(initializationButton)
     }
-    
-    private func configureButtons() {
-        addClientButton.setTitle("고객 10명 추가", for: .normal)
-        addClientButton.setTitleColor(.systemBlue, for: .normal)
-        addClientButton.titleLabel?.font = .preferredFont(forTextStyle: .body)
-        initializationButton.setTitle("초기화", for: .normal)
-        initializationButton.setTitleColor(.systemRed, for: .normal)
-        initializationButton.titleLabel?.font = .preferredFont(forTextStyle: .body)
+        
+        private func configureButtons() {
+            addClientButton.setTitle("고객 10명 추가", for: .normal)
+            addClientButton.setTitleColor(.systemBlue, for: .normal)
+            addClientButton.titleLabel?.font = .preferredFont(forTextStyle: .body)
+            initializationButton.setTitle("초기화", for: .normal)
+            initializationButton.setTitleColor(.systemRed, for: .normal)
+            initializationButton.titleLabel?.font = .preferredFont(forTextStyle: .body)
+        }
     }
-}
+
