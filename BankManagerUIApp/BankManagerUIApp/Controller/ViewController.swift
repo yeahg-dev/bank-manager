@@ -5,6 +5,7 @@ class ViewController: UIViewController {
     let buttonStackView: UIStackView = UIStackView()
     let addClientButton = UIButton()
     let initializationButton = UIButton()
+    let timerLabel = TimerLabel()
     
     override func loadView() {
         view = .init()
@@ -14,10 +15,13 @@ class ViewController: UIViewController {
         mainStackView.addArrangedSubview(buttonStackView)
         configureButtonStackView()
         configureButtons()
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainStackView.addArrangedSubview(timerLabel)
+        timerLabel.startTimer()
     }
     
     private func configureMainStackView() {
