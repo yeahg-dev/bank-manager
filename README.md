@@ -3,17 +3,17 @@
 ## 👀 개요
 클릭하면 해당 목차로 이동합니다🚀
 
-- [1. 프로젝트 소개](#1.-프로젝트-소개) 
-    - [핵심 keyword](##핵심-keyword)
+- [1. 프로젝트 소개](#1-프로젝트-소개) 
+    - [핵심 키워드](##핵심-keyword)
     - [기능 소개](##기능-소개)
     - [구조 소개](##구조-소개)
--  [2. 프로젝트 Output](#2.-프로젝트-output)
+-  [2. 프로젝트 Output](#2-프로젝트-output)
     - [✨What I Learend](##✨-What-I-Learned)
         - [Linked List로 Queue 타입 구현](###Linked-List로-Queue-타입-구현)
         - [ConsoleApp과 UIApp의 공통 로직 모듈화](###consoleapp과-uiapp의-공통-로직-모듈화)
-        - [GCD를 활용한 동시성 프로그래밍 구현](###GCD를-활용한-동시성-프로그래밍-구현)
-    - [💥Throuble Shooting](##💥-Trouble-Shooting)
-        - [Client수 증가에 따른 탐색시간 증가 ](###Client수-증가에-따른-탐색시간-증가 )
+        - [GCD를 활용한 동시성 프로그래밍 구현](###gcd를-활용한-동시성-프로그래밍-구현)
+    - [💥Throuble Shooting](##💥-trouble-shooting)
+        - [Client수 증가에 따른 탐색시간 증가 ](###client수-증가에-따른-탐색시간-증가 )
 
 <br>
 
