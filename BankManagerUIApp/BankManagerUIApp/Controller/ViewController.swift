@@ -207,6 +207,10 @@ extension ViewController: BankDelegate {
     }
     
     func reset() {
+        DispatchQueue.main.async {
+            self.timerLabel.stop()
+        }
+        
         waitingStackView.arrangedSubviews.forEach {
             $0.removeFromSuperview()
         }
