@@ -9,6 +9,7 @@ class Bank {
     private var totalNumberOfClient: Int = 0
     private let depositSemaphore = DispatchSemaphore(value: 2)
     private let loanSemaphore = DispatchSemaphore(value: 1)
+    private var isOpen: Bool = false
     
     init(
         delegate: BankDelegate,
@@ -21,6 +22,7 @@ class Bank {
     }
     
     func reset() {
+        self.isOpen = false
         clientQueue = Queue<Client>()
         completedClientCount = 0
         totalNumberOfClient = 0
@@ -62,9 +64,10 @@ class Bank {
     }
     
     func openForUI() {
+        self.isOpen = true
         receiveClient(of: 10)
         DispatchQueue.global().async {
-                self.allocateClientToBankClerk(inChargeOfDeposits: 2, inChargeOfLoans: 1)
+            self.allocateClientToBankClerk(inChargeOfDeposits: 2, inChargeOfLoans: 1)
             if self.totalNumberOfClient == self.completedClientCount {
                 self.delegate?.closeBusiness(by: self.completedClientCount, workHours: "1")
             }
@@ -80,7 +83,7 @@ class Bank {
         }
         return duration
     }
-
+    
     private func allocateClientToBankClerk(inChargeOfDeposits: Int, inChargeOfLoans: Int) {
         let group = DispatchGroup()
         
@@ -102,9 +105,13 @@ class Bank {
     }
     
     private func makeBankClerkWork(for client: Client) {
+        guard isOpen == true else {
+            return
+        }
+        
         self.delegate?.startWork(for: client)
         Thread.sleep(forTimeInterval: client.bankTask.requiredTime)
-        completedClientCount += 1
+        self.completedClientCount += 1
         self.delegate?.finishWork(for: client)
     }
 }

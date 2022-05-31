@@ -165,7 +165,7 @@ class ViewController: UIViewController {
         ])
     }
     
-    private func setClientLabelToWatingStackView(client: Client) {
+    private func setClientLabelToWorkingStackView(client: Client) {
         let clientLabel = ClientInformationLabel(waitingNumber: client.waitingNumber, bankTask: client.bankTask)
         self.workingStackView.addArrangedSubview(clientLabel)
     }
@@ -196,7 +196,7 @@ extension ViewController: BankDelegate {
     func startWork(for client: Client) {
         DispatchQueue.main.async {
             self.removeClientLabel(from: self.waitingStackView, client: client)
-            self.setClientLabelToWatingStackView(client: client)
+            self.setClientLabelToWorkingStackView(client: client)
         }
     }
     
