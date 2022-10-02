@@ -88,9 +88,9 @@ Queue를 Linked List로 구현한 이유는 요소의 추가 및 삭제 시간�
 
 (추후 리뷰를 통해 Double Stack으로도 Queue를 구현할 수 있고 `enqueue`와 `dequeue`에 대한 시간복잡도가 동일하다는 것을 알게 되었습니다.)
 
-[📁LinkedList.swift](https://github.com/yeahg-dev/ios-bank-manager/blob/step4/BankManagerShared/Model/LinkedList.swift)
+[📁LinkedList.swift](https://github.com/yeahg-dev/bank-manager/blob/main/BankManagerShared/Model/LinkedList.swift)
 
-[📁Queue.swift](https://github.com/yeahg-dev/ios-bank-manager/blob/step4/BankManagerShared/Model/Queue.swift)
+[📁Queue.swift](https://github.com/yeahg-dev/bank-manager/blob/main/BankManagerShared/Model/Queue.swift)
 
 <br>
 
