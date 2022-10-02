@@ -92,6 +92,8 @@ Queue를 Linked List로 구현한 이유는 요소의 추가 및 삭제 시간�
 
 [📁Queue.swift](https://github.com/yeahg-dev/bank-manager/blob/main/BankManagerShared/Model/Queue.swift)
 
+[📝 Queue 타입 구현: Linked List / Double Stack](https://velog.io/@yeahg_dev/Queue-%ED%83%80%EC%9E%85-%EA%B5%AC%ED%98%84-Linked-List-Double-Stack)
+
 <br>
 
 ### ConsoleApp과 UIApp의 공통 로직 모듈화
